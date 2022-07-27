@@ -1,7 +1,8 @@
 # TODO:  Напишите свой вариант
 from rest_framework import viewsets, filters
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.permissions import (IsAuthenticatedOrReadOnly,
+                                        IsAuthenticated)
 
 from posts.models import Comment, Follow, Group, Post
 from .serializers import (CommentSerializer, FollowSerializer,
