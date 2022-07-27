@@ -16,6 +16,37 @@ python manage.py runserver
 
 # Примеры
 
-1. Получить токен
-POST запрос http://127.0.0.1:8000/api/v1/token/
+Для начала необходимо получить токен передав в формате json 
+POST запрос http://127.0.0.1:8000/api/v1/jwt/create/
+{
+    "username": "user",
+    "password": "pass"
+}
+
+1.Пример обращения к http://127.0.0.1:8000/api/v1/posts/
+[
+    {
+        "id": 1,
+        "author": "evgeniy",
+        "text": "TestPost1",
+        "pub_date": "2022-07-27T18:30:32.343475Z",
+        "image": null,
+        "group": 1
+    }
+]
+2. Редиктирование поста http://127.0.0.1:8000/api/v1/posts/1/ 
+{
+    "id": 1,
+    "author": "evgeniy",
+    "text": "TestPost2",
+    "pub_date": "2022-07-27T18:30:32.343475Z",
+    "image": null,
+    "group": 1
+}
+3. После удаления поста обратимся к нему и получим
+
+{
+    "detail": "Not found."
+}
+
 
