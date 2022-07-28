@@ -24,9 +24,9 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
-    #а нужен тут пермишн, если вьюсет у нас ReadOnly?
+# а нужен тут пермишн, если вьюсет у нас ReadOnly?
 
-    #Это хороший вопрос. Без него у меня не проходил тест.
+# Это хороший вопрос. Без него у меня не проходил тест.
 
 
 class CommentViewSet(viewsets.ModelViewSet):
