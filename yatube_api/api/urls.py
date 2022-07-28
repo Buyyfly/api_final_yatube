@@ -1,8 +1,9 @@
+from django.views.generic import TemplateView
 from django.urls import include, path
 from rest_framework.routers import SimpleRouter
 
-from .views import (PostViewSet, FollowViewSet,
-                    GroupViewSet, CommentViewSet)
+from .views import (CommentViewSet, FollowViewSet,
+                    GroupViewSet, PostViewSet)
 
 
 router = SimpleRouter()
@@ -18,6 +19,10 @@ router.register(
 
 urlpatterns = [
     path('api/v1/', include(router.urls)),
-    path('api/v1/', include('djoser.urls')),
     path('api/v1/', include('djoser.urls.jwt')),
+    path(
+        'redoc/',
+        TemplateView.as_view(template_name='redoc.html'),
+        name='redoc'
+    ),
 ]
